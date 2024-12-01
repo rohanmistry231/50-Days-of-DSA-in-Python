@@ -128,7 +128,7 @@ def sorted_array(array):
 - Time Complexity: O(n) due to the single pass through the array.
 - Space Complexity: O(n) for the result array.
 
-#### **Problem 2: Monotonic Array **
+#### **Problem 2: Monotonic Array**
 - **Problem Statement**: Determine if the given array is monotonic (either non-decreasing or non-increasing).
 ```python
 def monotonic_array(array):
