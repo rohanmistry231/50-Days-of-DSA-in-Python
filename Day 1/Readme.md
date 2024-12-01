@@ -105,9 +105,9 @@ def sorted_array(array):
     res.sort()
     return res
 ```
--Explanation: This method squares each element of the array and sorts the results.
--Time Complexity: O(n log n) due to the sorting step.
--Space Complexity: O(n) due to the new array res.
+- Explanation: This method squares each element of the array and sorts the results.
+- Time Complexity: O(n log n) due to the sorting step.
+- Space Complexity: O(n) due to the new array res.
 
 ##### **Method 2: Optimized Approach**
 ```python
@@ -124,9 +124,9 @@ def sorted_array(array):
             j -= 1
     return res
 ```
--Explanation: This method uses two pointers, starting from both ends of the array. It compares the squares and inserts the larger value at the correct position in the result array.
--Time Complexity: O(n) due to the single pass through the array.
--Space Complexity: O(n) for the result array.
+- Explanation: This method uses two pointers, starting from both ends of the array. It compares the squares and inserts the larger value at the correct position in the result array.
+- Time Complexity: O(n) due to the single pass through the array.
+- Space Complexity: O(n) for the result array.
 
 #### **Problem 2: Monotonic Array **
 - **Problem Statement**: Determine if the given array is monotonic (either non-decreasing or non-increasing).
@@ -151,9 +151,9 @@ def monotonic_array(array):
                 return False
     return True
 ```
--Explanation: This method checks if the array is either strictly increasing or decreasing by comparing elements from left to right.
--Time Complexity: O(n) as the array is traversed once.
--Space Complexity: O(1) since we only use a few variables.
+- Explanation: This method checks if the array is either strictly increasing or decreasing by comparing elements from left to right.
+- Time Complexity: O(n) as the array is traversed once.
+- Space Complexity: O(1) since we only use a few variables.
 
 ## Conclusion
 
