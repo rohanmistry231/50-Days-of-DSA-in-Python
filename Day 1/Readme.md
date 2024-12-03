@@ -143,6 +143,12 @@ def monotonic_array(array):
 
 ## Conclusion
 
+<<<<<<< HEAD
 In **Day 1**, we covered essential topics that will serve as the foundation for the next **54 days** of learning. The combination of understanding algorithm complexity and mastering fundamental data structures like arrays will be key to solving more complex problems in the coming days.
 
 We are now ready to move on to the next set of topics, continuing to improve our skills in Data Structures and Algorithms.
+=======
+In **Day 1**, we covered essential topics that will serve as the foundation for the next 55 days of learning. The combination of understanding algorithm complexity and mastering fundamental data structures like arrays will be key to solving more complex problems in the coming days.
+
+We are now ready to move on to the next set of topics, continuing to improve our skills in **Data Structures and Algorithms**.
+>>>>>>> e7081a1958e600304313254b1325386114f82adf
