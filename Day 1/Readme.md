@@ -140,6 +140,8 @@ def monotonic_array(array):
 - Time Complexity: O(n) as the array is traversed once.
 - Space Complexity: O(1) since we only use a few variables.
 
+---
+
 ## Conclusion
 
 In **Day 1**, we covered essential topics that will serve as the foundation for the next **54 days** of learning. The combination of understanding algorithm complexity and mastering fundamental data structures like arrays will be key to solving more complex problems in the coming days.
