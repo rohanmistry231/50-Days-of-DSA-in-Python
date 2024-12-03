@@ -90,8 +90,6 @@ def sorted_array(array):
 - Time Complexity: O(n log n) due to the sorting step.
 - Space Complexity: O(n) due to the new array res.
 
----
-
 ##### **Method 2: Optimized Approach**
 ```python
 def sorted_array(array):
@@ -110,6 +108,8 @@ def sorted_array(array):
 - Explanation: This method uses two pointers, starting from both ends of the array. It compares the squares and inserts the larger value at the correct position in the result array.
 - Time Complexity: O(n) due to the single pass through the array.
 - Space Complexity: O(n) for the result array.
+
+---
 
 ### **4. Monotonic Array**
 #### **Problem Statement**
