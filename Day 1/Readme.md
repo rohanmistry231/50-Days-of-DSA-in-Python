@@ -6,15 +6,12 @@ Welcome to Day 1 of **55 Days of DSA in Python**! On this day, we focused on fou
 
 ## **Topics to be Covered**
 
-### **[Day 1](./Day%201):**
 - Arrays  
 - Big O Notation  
 - Sorted Squared Array  
 - Monotonic Array  
 
 ---
-
-## **Topics Covered**
 
 ### **1. Arrays**
 An **array** is a collection of elements, each identified by an index or key. Arrays are used to store multiple values in a single variable, and all elements in an array must be of the same type.
@@ -92,6 +89,8 @@ def sorted_array(array):
 - Explanation: This method squares each element of the array and sorts the results.
 - Time Complexity: O(n log n) due to the sorting step.
 - Space Complexity: O(n) due to the new array res.
+
+---
 
 ##### **Method 2: Optimized Approach**
 ```python
