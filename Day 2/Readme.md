@@ -164,7 +164,7 @@ def kth_symbol(n, k):
 
 ---
 
-#### **Josephus Problem**
+### **3. Josephus Problem**
 
 The **Josephus Problem** is a famous theoretical problem in which people stand in a circle and eliminate every k-th person until only one person remains. The task is to determine the position of the last person standing.
 
