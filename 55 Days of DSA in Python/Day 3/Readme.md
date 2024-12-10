@@ -1,148 +1,292 @@
-# Day 3: Recursion and Problem Solving
+```markdown
+# Day 4: Backtracking and Problem Solving
 
-Welcome to Day 3 of **55 Days of DSA in Python**! On this day, we explored **Recursion** and addressed two fascinating problems: **Tower of Hanoi** and the **Power Sum**. This README is designed to provide a thorough understanding of these topics, including their solutions.
+Welcome to Day 4 of **55 Days of DSA in Python**! On this day, we delved into **Backtracking**, exploring its applications through two intriguing problems: **Permutations** and **Unique Permutations**. This README provides a comprehensive understanding of these topics, complete with their solutions.
 
 ---
 
 ## **Topics to be Covered**
 
-- Recursion  
-- Tower of Hanoi  
-- Power Sum  
+- Backtracking  
+- Permutations  
+- Unique Permutations  
 
 ---
 
-### **[Day 3](./Day%203):**
+### **[Day 4](./Day%204):**
 
-#### Recursion
-Recursion is a fundamental concept in computer science where a function calls itself to solve smaller subproblems of a larger problem. It is particularly useful in scenarios where the problem can be divided into similar subproblems, such as in the case of divide-and-conquer algorithms. 
+### Backtracking:
 
-In the context of the Tower of Hanoi problem, recursion helps us break down the problem of moving `n` disks from one rod to another into smaller problems of moving `n-1` disks. Recursion simplifies the logic but requires careful consideration of the base case (when recursion stops) and recursive case (how the function calls itself).
-
-Key Points of Recursion:
-- **Base Case**: Prevents infinite recursion by defining a condition where the function stops calling itself.
-- **Recursive Case**: Defines how the problem can be solved by reducing it to smaller instances of the same problem.
-- **Stack Usage**: Recursive calls are stored in the program's call stack, which can lead to stack overflow if the recursion depth is too high.
+#### **What is Backtracking?**  
+Backtracking is an algorithmic technique used to solve problems incrementally by building solutions piece by piece. At each step, it explores the solution space and abandons paths that do not satisfy the problem's constraints. Backtracking is especially useful in problems where we need to generate all possible configurations or make choices sequentially.
 
 ---
 
-#### Tower of Hanoi
-The Tower of Hanoi is a classic problem that demonstrates recursion's power and elegance. The objective is to move a set of disks from one rod to another, following these rules:
-1. Only one disk can be moved at a time.
-2. A disk can only be placed on top of a larger disk or on an empty rod.
+#### **How is Backtracking Different from Recursion?**  
+Backtracking is often implemented using recursion, but they are not the same concept. Here's how they differ:  
 
-**Recursive Solution**:
-The solution to the Tower of Hanoi problem is built around the idea of moving `n-1` disks to an auxiliary rod, moving the `nth` disk to the target rod, and then moving the `n-1` disks from the auxiliary rod to the target rod.
+| **Feature**              | **Recursion**                                                                 | **Backtracking**                                                                                           |
+|---------------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| **Definition**            | A function calling itself until a base condition is met.                     | A recursive approach combined with a strategy to revert changes and explore other possibilities.          |
+| **Focus**                 | Solving a problem by breaking it into smaller subproblems.                   | Exploring all possible solutions and rejecting invalid ones dynamically.                                  |
+| **State Management**      | Does not necessarily revert changes made in recursive calls.                 | Explicitly undoes changes (backtracks) after a path is explored to restore the previous state.            |
+| **Applications**          | Solving problems like Fibonacci sequence, factorial, etc.                   | Problems like permutations, combinations, Sudoku solver, N-Queens, and constraint satisfaction problems. |
 
-Here is the Python implementation of the Tower of Hanoi problem:
+---
+
+#### **How Does Backtracking Work?**  
+Backtracking works by using a **decision tree** to explore all potential solutions for a problem. It involves the following steps:  
+
+1. **Choose**: Make a choice from the available options.  
+2. **Explore**: Proceed with the chosen option recursively.  
+3. **Backtrack**: If the current path leads to a dead end (violates constraints), undo the last choice and try another.  
+
+**Example Workflow**:  
+For a permutation problem with input `[1, 2, 3]`:  
+- Start with `1` → Explore permutations starting with `1`.  
+- Add `2` to `1` → Explore permutations of `[1, 2]`.  
+- Add `3` to `[1, 2]` → `[1, 2, 3]` is a valid permutation.  
+- Backtrack by removing `3` → Explore other numbers at the last position.  
+
+---
+
+#### **Pass by Reference / Change Inplace**  
+In backtracking, it is common to modify data structures like arrays or lists "inplace" (directly modifying the original data).  
+- **Pass by Reference**: The same object is used and modified across recursive calls.  
+- **Undo Changes**: After exploring one option, the changes are reverted to their previous state.  
+
+Example of inplace modification in Python:  
+```python
+nums[i], nums[j] = nums[j], nums[i]  # Swap to explore
+# Perform recursive exploration
+nums[i], nums[j] = nums[j], nums[i]  # Undo swap (backtrack)
+```
+
+This minimizes memory usage as no additional copies are created.
+
+---
+
+#### **Blueprint to Solve Questions Using Backtracking**  
+Here’s a systematic approach to solve backtracking problems:
+
+1. **Understand the Problem**:
+   - What are the constraints?
+   - What is the goal (e.g., generate permutations, combinations, solve a grid)?
+   
+2. **Define the State**:
+   - What represents a partial solution?
+   - For permutations, the state is the current arrangement of elements.
+
+3. **Identify Choices**:
+   - What are the valid options at each step?
+   - For combinations, choices are unselected elements.
+
+4. **Write the Recursive Function**:
+   - Include base and recursive cases.
+   - Use a loop to iterate through choices.
+
+5. **Backtrack**:
+   - Revert the state after exploring a path.
+
+---
+
+#### **Identify When to Use Backtracking**  
+Backtracking is useful in problems with the following characteristics:  
+1. **Exhaustive Search**: The problem requires generating all configurations.  
+2. **Constraints**: Solutions must satisfy specific conditions (e.g., Sudoku).  
+3. **Optimization**: Searching for optimal configurations under constraints.  
+
+---
+
+### Updated Code: Permutations (With Comments and Enhanced Understanding)  
 
 ```python
-def tower_of_hanoi(n_disks, source, target, auxiliary):
+from typing import List
+
+def permute(nums: List[int]) -> List[List[int]]:
     """
-    Solves the Tower of Hanoi problem and prints the moves.
+    Generate all permutations of a list of numbers using backtracking.
 
     Args:
-        n_disks (int): The number of disks to move.
-        source (int): The source rod.
-        target (int): The target rod.
-        auxiliary (int): The auxiliary rod.
+        nums (List[int]): A list of integers to permute.
 
     Returns:
-        int: The total number of moves performed.
+        List[List[int]]: A list containing all permutations of the input list.
     """
-    move_count = 0
+    res = []  # List to store all permutations
+    n = len(nums)  # Length of the input list
 
-    def solve_hanoi(n, source_rod, target_rod, aux_rod):
+    def backtrack(start: int):
         """
-        Recursive helper function to solve the Tower of Hanoi problem.
+        Backtracking function to generate permutations.
 
         Args:
-            n (int): Number of disks to move.
-            source_rod (int): The source rod.
-            target_rod (int): The target rod.
-            aux_rod (int): The auxiliary rod.
+            start (int): Current index for permutation generation.
         """
-        nonlocal move_count
-        if n == 1:
-            move_count += 1
-            print(f"Move disk {n} from rod {source_rod} to rod {target_rod}")
+        # Base Case: If we've reached the last index, add the permutation
+        if start == n:
+            res.append(nums[:])  # Append a copy of nums to results
             return
 
-        # Move n-1 disks from source to auxiliary using target as auxiliary.
-        solve_hanoi(n - 1, source_rod, aux_rod, target_rod)
-        
-        # Move the nth disk from source to target.
-        move_count += 1
-        print(f"Move disk {n} from rod {source_rod} to rod {target_rod}")
+        # Iterate through the possible choices
+        for i in range(start, n):
+            # Swap the current index with the choice index
+            nums[start], nums[i] = nums[i], nums[start]
+            backtrack(start + 1)  # Recurse to the next index
+            nums[start], nums[i] = nums[i], nums[start]  # Backtrack (undo the swap)
 
-        # Move n-1 disks from auxiliary to target using source as auxiliary.
-        solve_hanoi(n - 1, aux_rod, target_rod, source_rod)
-
-    solve_hanoi(n_disks, source, target, auxiliary)
-    return move_count
+    backtrack(0)  # Start the recursion from the first index
+    return res
 ```
-
-**Time Complexity**:
-- The recursive solution has a time complexity of \( O(2^n) \), where \( n \) is the number of disks. This is because each call to the function spawns two additional recursive calls until the base case is reached.
-
-**Space Complexity**:
-- The space complexity is \( O(n) \) due to the recursion stack, where \( n \) is the number of disks.
 
 ---
 
-#### Power Sum
-The Power Sum problem involves calculating the sum of elements in a nested list, with each level of nesting contributing a progressively higher power to the sum. The solution is implemented using recursion to process nested lists.
-
-Here is the Python implementation:
+### Updated Code: Unique Permutations  
 
 ```python
-def power_sum(array, power=1):
+from typing import List
+
+def permute_unique(nums: List[int]) -> List[List[int]]:
     """
-    Calculate the power sum of a nested list.
+    Generate all unique permutations of a list of numbers using backtracking.
 
-    The function recursively processes nested lists, summing elements
-    at increasing power levels for each level of nesting.
-
-    Parameters:
-        array (list): A list of integers or nested lists.
-        power (int, optional): The power level for the current recursion. Defaults to 1.
+    Args:
+        nums (List[int]): A list of integers that might contain duplicates.
 
     Returns:
-        int: The power sum of the input list.
+        List[List[int]]: A list containing all unique permutations of the input list.
     """
-    total = 0  # Variable to store the running total
+    res = []  # List to store all unique permutations
 
-    for item in array:
-        if isinstance(item, list):  # Check if the current element is a list
-            total += power_sum(item, power + 1)
-        else:
-            total += item
+    def backtrack(start: int):
+        """
+        Backtracking function to generate unique permutations.
 
-    return total ** power
-```
+        Args:
+            start (int): Current index for permutation generation.
+        """
+        if start == len(nums):
+            res.append(nums[:])  # Append a copy of nums to results
+            return
 
-**Explanation**:
-- The function traverses the list recursively, checking whether each element is a nested list.
-- For each nested list, the recursion depth increases, and the power is incremented.
-- The base case is when the element is not a list, in which case it contributes directly to the sum.
+        seen = set()  # Set to track processed elements at the current recursion level
+        for i in range(start, len(nums)):
+            if nums[i] not in seen:  # Skip duplicate elements
+                seen.add(nums[i])
+                nums[start], nums[i] = nums[i], nums[start]  # Swap elements
+                backtrack(start + 1)  # Recurse for the next index
+                nums[start], nums[i] = nums[i], nums[start]  # Backtrack
 
-**Example**:
+    nums.sort()  # Sort the input to group duplicates
+    backtrack(0)  # Start the recursion from the first index
+    return res
+```  
+
+---
+
+#### Permutations
+**Problem**: Generate all permutations of a list of distinct integers.
+
+**Recursive Solution**:
+The recursive solution involves swapping elements to explore all possible arrangements of the list. The base case is reached when all positions are fixed, at which point the current permutation is added to the result.
+
+**Python Implementation**:
 ```python
-nested_list = [1, [2, 3], [[4]], 5]
-result = power_sum(nested_list)
-print(result)  # Output depends on the nesting depth and the values in the list.
+from typing import List
+
+def permute(nums: List[int]) -> List[List[int]]:
+    """
+    Generate all permutations of a list of numbers.
+
+    Args:
+        nums (List[int]): A list of integers to permute.
+
+    Returns:
+        List[List[int]]: A list containing all permutations of the input list.
+    """
+    res = []  # List to store all permutations
+    n = len(nums)  # Length of the input list
+
+    def helper(i: int):
+        """
+        Recursive helper function to generate permutations.
+
+        Args:
+            i (int): Current index for permutation generation.
+        """
+        if i == n - 1:
+            res.append(nums[:])  # Append a copy of nums to results
+            return
+
+        for j in range(i, n):
+            nums[i], nums[j] = nums[j], nums[i]  # Swap elements
+            helper(i + 1)  # Recurse for the next index
+            nums[i], nums[j] = nums[j], nums[i]  # Backtrack (undo the swap)
+
+    helper(0)  # Start the recursion from the first index
+    return res
 ```
 
 **Complexity**:
-- Time Complexity: \( O(n) \), where \( n \) is the total number of elements in the nested structure.
-- Space Complexity: \( O(d) \), where \( d \) is the depth of the nested list, due to the recursion stack.
+- Time Complexity: \( O(n \times n!) \), where \( n \) is the length of the list.
+- Space Complexity: \( O(n) \), for the recursion stack.
+
+---
+
+#### Unique Permutations
+**Problem**: Generate all unique permutations of a list of integers, which may contain duplicates.
+
+**Recursive Solution**:
+The recursive solution builds upon the permutations approach, with additional logic to handle duplicates. By using a set to track processed elements at each recursion level, we avoid generating duplicate permutations.
+
+**Python Implementation**:
+```python
+from typing import List
+
+def permute_unique(nums: List[int]) -> List[List[int]]:
+    """
+    Generate all unique permutations of a list of numbers, including duplicates.
+
+    Args:
+        nums (List[int]): A list of integers that might contain duplicates.
+
+    Returns:
+        List[List[int]]: A list containing all unique permutations of the input list.
+    """
+    res = []  # List to store all unique permutations
+
+    def helper(index: int):
+        """
+        Recursive helper function to generate unique permutations.
+
+        Args:
+            index (int): Current index for permutation generation.
+        """
+        if index == len(nums) - 1:
+            res.append(nums[:])  # Append a copy of nums to results
+            return
+
+        seen = set()  # Set to track processed elements
+        for j in range(index, len(nums)):
+            if nums[j] not in seen:  # Skip duplicates
+                seen.add(nums[j])
+                nums[index], nums[j] = nums[j], nums[index]  # Swap elements
+                helper(index + 1)  # Recurse for the next index
+                nums[index], nums[j] = nums[j], nums[index]  # Backtrack (undo the swap)
+
+    nums.sort()  # Sort the input to ensure duplicates are grouped
+    helper(0)  # Start the recursion from the first index
+    return res
+```
+
+**Complexity**:
+- Time Complexity: \( O(n \times n!) \), with deduplication reducing total permutations.
+- Space Complexity: \( O(n) \), for the recursion stack.
 
 ---
 
 #### Conclusion
-Day 3 provided insights into:
-1. **Recursion**: Understanding its role in solving problems like Tower of Hanoi and Power Sum.
-2. **Tower of Hanoi**: A classic recursion problem, highlighting the elegance and challenges of recursive solutions.
-3. **Power Sum**: Demonstrating the versatility of recursion in handling complex data structures like nested lists.
-
-These concepts strengthen the foundation of recursion, a crucial technique in problem-solving and algorithm design.
+Day 4 provided insights into:
+1. **Backtracking**: A powerful technique for exploring all possibilities while pruning invalid paths.
+2. **Permutations**: Solving for all arrangements of distinct elements.
+3. **Unique Permutations**: Addressing duplicates to generate only distinct arrangements.
