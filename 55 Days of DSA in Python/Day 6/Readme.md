@@ -12,7 +12,7 @@ Welcome to Day 6 of **55 Days of DSA in Python**! Today, we continue exploring *
 
 ---
 
-## **Backtracking in the Context of Combinations**
+## **1. Backtracking in the Context of Combinations**
 
 Backtracking is a powerful algorithmic technique used to solve combinatorial problems. It systematically explores all possible solutions by building candidates incrementally and abandoning them ("backtracking") as soon as it determines that the current path will not lead to a valid solution.
 
@@ -25,11 +25,9 @@ Backtracking is particularly useful for generating combinations, as it allows us
 
 ---
 
-### **Combinations**
+### **2. Combinations**
 
 Combinations are a fundamental concept in combinatorics, where we aim to select a subset of items from a given set, without considering the order of selection. In this section, we explore how **Backtracking** is used to generate combinations.
-
----
 
 #### **Problem 1: Generate Combinations (Normal Approach)**
 
@@ -152,7 +150,7 @@ def find_combinations_optimized(n: int, k: int) -> List[List[int]]:
 ```
 ---
 
-## **Combination Sum 1**
+## **3. Combination Sum 1**
 
 ### **Problem: Find All Unique Combinations That Sum to a Target**
 Given an array of distinct integers `candidates` and a target integer `target`, return all unique combinations of `candidates` where the chosen numbers sum to `target`. You may reuse elements of `candidates` as many times as necessary.
