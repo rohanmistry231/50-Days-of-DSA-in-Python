@@ -1,6 +1,3 @@
-Here is the **Day 5 README** in markdown format:
-
-```markdown
 # Day 5: Backtracking and Subsets
 
 Welcome to Day 5 of **55 Days of DSA in Python**! Today, we dive deeper into **Backtracking**, a powerful problem-solving technique, and focus on its application in solving **Subsets Problems**. This README will guide you through the concepts, code, and detailed analysis of the problems tackled on this day.
