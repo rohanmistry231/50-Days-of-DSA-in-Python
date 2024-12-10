@@ -14,7 +14,7 @@ Welcome to Day 3 of **55 Days of DSA in Python**! On this day, we explored **Rec
 
 ### **[Day 3](./Day%203):**
 
-#### Recursion
+### **1. Recursion**
 Recursion is a fundamental concept in computer science where a function calls itself to solve smaller subproblems of a larger problem. It is particularly useful in scenarios where the problem can be divided into similar subproblems, such as in the case of divide-and-conquer algorithms. 
 
 In the context of the Tower of Hanoi problem, recursion helps us break down the problem of moving `n` disks from one rod to another into smaller problems of moving `n-1` disks. Recursion simplifies the logic but requires careful consideration of the base case (when recursion stops) and recursive case (how the function calls itself).
@@ -26,7 +26,7 @@ Key Points of Recursion:
 
 ---
 
-#### Tower of Hanoi
+### **2. Tower of Hanoi**
 The Tower of Hanoi is a classic problem that demonstrates recursion's power and elegance. The objective is to move a set of disks from one rod to another, following these rules:
 1. Only one disk can be moved at a time.
 2. A disk can only be placed on top of a larger disk or on an empty rod.
@@ -90,7 +90,7 @@ def tower_of_hanoi(n_disks, source, target, auxiliary):
 
 ---
 
-#### Power Sum
+### **3. Power Sum**
 The Power Sum problem involves calculating the sum of elements in a nested list, with each level of nesting contributing a progressively higher power to the sum. The solution is implemented using recursion to process nested lists.
 
 Here is the Python implementation:

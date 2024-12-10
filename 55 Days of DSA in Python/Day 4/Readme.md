@@ -65,7 +65,7 @@ Backtracking is particularly useful in solving problems related to:
 
 ### **2. Permutations**
 
-### **Problem: Permutations**
+#### **Problem: Permutations**
 
 The problem of generating all permutations of a given list of integers asks us to find every possible arrangement of the elements in the list, ensuring that each permutation is unique. A permutation is simply an ordered arrangement of elements.
 
@@ -117,7 +117,7 @@ def permute(nums: List[int]) -> List[List[int]]:
 
 ### **3. Unique Permutations**
 
-### **Problem: Unique Permutations**
+#### **Problem: Unique Permutations**
 
 In the case where the list might contain duplicate elements, we need to generate **unique permutations** only, meaning no duplicate arrangements. For example, given the list `[1, 1, 2]`, the possible permutations should be `[[1, 1, 2], [1, 2, 1], [2, 1, 1]]` and not `[1, 1, 2]` twice.
 
