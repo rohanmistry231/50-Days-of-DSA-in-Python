@@ -14,6 +14,8 @@ Welcome to Day 4 of **55 Days of DSA in Python**! On this day, we delved into **
 
 ### **[Day 4](./Day%204):**
 
+### **1. Backtracking**
+
 #### **What is Backtracking?**
 
 Backtracking is a general algorithm for finding all (or some) solutions to a computational problem, especially constraint satisfaction problems. It incrementally builds candidates for the solutions and abandons (backtracks) a candidate as soon as it is determined that it cannot be extended to a valid solution.
@@ -60,6 +62,8 @@ Backtracking is particularly useful in solving problems related to:
 - Pathfinding problems (e.g., maze solving)
 
 ---
+
+### **2. Permutations**
 
 ### **Problem: Permutations**
 
@@ -110,6 +114,8 @@ def permute(nums: List[int]) -> List[List[int]]:
 ```
 
 ---
+
+### **3. Unique Permutations**
 
 ### **Problem: Unique Permutations**
 
