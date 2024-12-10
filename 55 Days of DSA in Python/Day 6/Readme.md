@@ -25,12 +25,74 @@ Backtracking is particularly useful for generating combinations, as it allows us
 
 ---
 
-## **Combinations**
+### **Combinations**
 
-### **Problem 1: Generate All Combinations**
-Find all combinations of size `k` from the numbers `1` to `n`.
+Combinations are a fundamental concept in combinatorics, where we aim to select a subset of items from a given set, without considering the order of selection. In this section, we explore how **Backtracking** is used to generate combinations.
 
-**Optimized Solution**
+---
+
+#### **Problem 1: Generate Combinations (Normal Approach)**
+
+This problem involves generating all possible combinations of `k` numbers chosen from the range `[1, n]`. We use a backtracking approach to explore the solution space efficiently.
+
+```python
+from typing import List
+
+def generate_combinations(n: int, k: int) -> List[List[int]]:
+    """
+    Generate all possible combinations of k numbers chosen from the range [1, n].
+
+    Args:
+        n (int): The upper limit of the range (inclusive).
+        k (int): The size of each combination.
+
+    Returns:
+        List[List[int]]: A list containing all possible combinations.
+
+    Time Complexity:
+        O(C(n, k)): The number of combinations is n! / (k! * (n - k)!).
+        Each combination requires O(k) time to copy to the result.
+
+    Space Complexity:
+        O(k): The recursion stack can go as deep as the size of each combination.
+
+    Example:
+        Input: n = 4, k = 2
+        Output: [[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
+    """
+    combinations = []
+
+    def backtrack(start: int, current_combination: List[int]) -> None:
+        """
+        Helper function to generate combinations using backtracking.
+
+        Args:
+            start (int): The starting number for the current recursion.
+            current_combination (List[int]): The combination being built.
+        """
+        # Base Case: If the current combination has k numbers, add it to the result
+        if len(current_combination) == k:
+            combinations.append(current_combination[:])  # Add a copy of the current combination
+            return
+
+        # Explore further by adding numbers to the combination
+        for number in range(start, n + 1):
+            # Include the current number
+            current_combination.append(number)
+            backtrack(number + 1, current_combination)
+
+            # Exclude the current number (backtrack)
+            current_combination.pop()
+
+    # Start backtracking with an empty combination
+    backtrack(1, [])
+    return combinations
+```
+
+#### **Problem 2: Combinations with Optimization**
+
+In this version, we optimize the approach by reducing the range of iteration based on how many numbers are still required to complete a combination. This minimizes unnecessary recursive calls, making the algorithm more efficient.
+
 ```python
 from typing import List
 
@@ -48,7 +110,7 @@ def find_combinations_optimized(n: int, k: int) -> List[List[int]]:
         List[List[int]]: A list of all unique combinations.
 
     Time Complexity:
-        O(C(n, k)): The time complexity corresponds to the number of combinations, which is n! / (k! * (n-k)!)
+        O(C(n, k)): The time complexity corresponds to the number of combinations, which is n! / (k! * (n-k)!).
 
     Space Complexity:
         O(k): The maximum depth of the recursion stack.
@@ -60,28 +122,34 @@ def find_combinations_optimized(n: int, k: int) -> List[List[int]]:
     combinations = []
 
     def backtrack(start: int, current_combination: List[int]) -> None:
+        """
+        Helper function to generate combinations using backtracking.
+
+        Args:
+            start (int): The starting index for the current recursion.
+            current_combination (List[int]): The current combination being built.
+        """
+        # If the current combination has the required size, save it
         if len(current_combination) == k:
-            combinations.append(current_combination[:])
+            combinations.append(current_combination[:])  # Add a copy of the current combination
             return
 
+        # Calculate the number of elements still needed
         need = k - len(current_combination)
+
+        # Iterate over the range with an optimized end to reduce unnecessary recursion
         for i in range(start, n - (need - 1) + 1):
+            # Include the current number
             current_combination.append(i)
             backtrack(i + 1, current_combination)
+
+            # Exclude the current number (backtrack)
             current_combination.pop()
 
+    # Start backtracking with an empty combination
     backtrack(1, [])
     return combinations
-
-if __name__ == "__main__":
-    n_value = 4
-    k_value = 2
-    result = find_combinations_optimized(n_value, k_value)
-    print(f"All {k_value}-combinations of numbers from 1 to {n_value} are:")
-    for combination in result:
-        print(combination)
 ```
-
 ---
 
 ## **Combination Sum 1**
