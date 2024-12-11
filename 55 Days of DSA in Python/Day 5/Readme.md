@@ -13,7 +13,7 @@ Welcome to Day 5 of **55 Days of DSA in Python**! Today, we dive deeper into **B
 
 ### **[Day 5](./Day%205):**
 
-#### **1. Backtracking**
+### **1. Backtracking**
 Backtracking is a problem-solving technique used to explore all potential solutions to a problem by incrementally building candidates and abandoning those that fail to meet the problem's constraints. It is particularly useful in solving combinatorial problems like generating subsets, permutations, and combinations.
 
 ##### **Backtracking in the Context of Subsets**
@@ -31,11 +31,9 @@ Key points to remember:
 
 ---
 
-#### **2. Subsets**
+### **2. Subsets**
 
 The subsets problem focuses on generating all possible subsets (or the power set) of a given list of integers. These problems demonstrate the elegance and power of backtracking in solving combinatorial problems.
-
----
 
 ### Problem 1: **Generate All Subsets**
 
@@ -92,8 +90,6 @@ def generate_power_set(nums: List[int]) -> List[List[int]]:
     backtrack(0, [])
     return subsets
 ```
-
----
 
 ### Problem 2: **Generate Unique Subsets with Duplicates**
 
