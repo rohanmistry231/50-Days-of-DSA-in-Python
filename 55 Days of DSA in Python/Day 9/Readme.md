@@ -89,8 +89,6 @@ def fibonacci(n):
 #### **Analysis**:
 - This approach is straightforward but highly inefficient due to overlapping subproblems.
 
----
-
 ### **2. Memorization Approach**
 
 ```python
@@ -121,8 +119,6 @@ def fibonacci(n):
 
 #### **Analysis**:
 - Memorization eliminates redundant calculations, significantly improving efficiency.
-
----
 
 ### **3. Tabulation Approach**
 
@@ -156,8 +152,6 @@ def fibonacci(n):
 
 #### **Analysis**:
 - Tabulation solves the problem iteratively, avoiding recursion altogether.
-
----
 
 ### **4. Space Optimization Approach**
 
