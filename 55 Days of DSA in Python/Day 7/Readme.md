@@ -5,10 +5,10 @@ Welcome to Day 7 of **55 Days of DSA in Python**! Today, we continue exploring *
 ---
 
 ## **Topics Covered**
-### **[Day 6](./Day%206):**
-- Backtracking  
-- Combinations  
-- Combination Sum 1  
+### **[Day 7](./Day%206):**
+- Backtracking
+- Combinations Sum 2
+- Combination Sum 3
 
 ---
 
