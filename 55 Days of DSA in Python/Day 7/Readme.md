@@ -1,4 +1,4 @@
-+# Day 7: Backtracking and Advanced Combination Problems
+# Day 7: Backtracking and Advanced Combination Problems
 
 Welcome to Day 7 of **55 Days of DSA in Python**! Today, we continue exploring **Backtracking**, focusing on advanced combination problems that build upon the foundational concepts of combinations and target sums. This README will guide you through the topics, concepts, and solutions covered on this day.
 
