@@ -212,5 +212,5 @@ if __name__ == "__main__":
 - **Combinations**:
   - First problem generates all combinations of a given size.
   - Optimized version reduces unnecessary iterations.
-- **Combination Sum**:
+- **Combination Sum 1**:
   - Explores all unique ways to sum up to a target using candidate numbers.
