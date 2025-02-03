@@ -1,4 +1,4 @@
-# **[Day 15](./Day%2015): Dynamic Programming**
+# **Day 15: Dynamic Programming**
 
 Welcome to **Day 15** of **55 Days of DSA in Python**! Today, we dive into Dynamic Programming with a focus on solving problems related to **Palindromic Substrings**, **Longest Palindromic Substring**, and **Longest Palindromic Subsequence**. These problems are central in text processing and pattern recognition, and mastering them will strengthen your understanding of string manipulations and dynamic programming techniques.
 

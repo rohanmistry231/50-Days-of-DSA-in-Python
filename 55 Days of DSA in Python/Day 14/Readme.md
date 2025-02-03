@@ -1,4 +1,4 @@
-# **[Day 14](./Day%2014): Dynamic Programming**
+# **Day 14: Dynamic Programming**
 
 Welcome to Day 14 of **55 Days of DSA in Python**! Today, we dive into more dynamic programming problems, focusing on key sequence-based challenges: **Longest Increasing Subsequence (LIS)**, **Max Length of Pair Chain**, and **Russian Doll Envelopes**. These problems are crucial for solving optimization challenges involving sequences and subsequences, providing a strong foundation for working with DP techniques in various real-world applications.
 
