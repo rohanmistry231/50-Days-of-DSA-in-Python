@@ -137,8 +137,12 @@ def longestPalindromeSubseq(s):
 
 ---
 
-## **Conclusion**
+### **Conclusion**
 
-In **Day 15**, we explored various problems related to palindromes using Dynamic Programming techniques. We implemented multiple approaches to solve the **Palindromic Substrings**, **Longest Palindromic Substring**, and **Longest Palindromic Subsequence** problems. These problems demonstrate how DP can be effectively used to solve substring-related challenges with different optimization strategies.
+Today, we explored three important problems related to palindromes in Dynamic Programming:
 
-The solutions varied from basic dynamic programming with tables to recursive approaches and optimized space complexities, offering a comprehensive understanding of handling palindrome-related problems efficiently.
+1. **Palindromic Substrings** with a focus on identifying all substrings that are palindromes.
+2. **Longest Palindromic Substring** using dynamic programming to find the longest contiguous palindrome within a string.
+3. **Longest Palindromic Subsequence**, where we tackled the problem of finding the longest subsequence (not necessarily contiguous) that is a palindrome.
+
+Mastering these problems will enhance your ability to work with string manipulations and pattern recognition. Keep practicing to improve your skills in solving palindrome-based challenges. See you tomorrow for more exciting problems!

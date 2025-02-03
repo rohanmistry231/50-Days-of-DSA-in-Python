@@ -172,8 +172,12 @@ def maxEnvelopes(envelopes):
 
 ---
 
-## **Conclusion**
+### **Conclusion**
 
-In **Day 14**, we covered key Dynamic Programming problems that involve sequences and subsequences, such as finding the longest increasing subsequence, the longest chain of pairs, and nested envelopes. Each approach offers a different perspective on solving these problems, with optimization strategies in terms of time and space complexity.
+Today, we tackled three fundamental problems in Dynamic Programming:
 
-The solutions covered both bottom-up (tabulation) and top-down (memoization) dynamic programming approaches, along with binary search methods to optimize the LIS problem. These techniques are fundamental in solving a variety of problems efficiently using Dynamic Programming.
+1. **Longest Increasing Subsequence (LIS)** with five approaches: Recursion, Memoization, Tabulation, Space Optimized DP, and Binary Search.
+2. **Max Length of Pair Chain** using dynamic programming.
+3. **Russian Doll Envelopes**, where we applied LIS techniques to solve the problem efficiently.
+
+By mastering these problems, you’ve built a strong foundation for solving sequence-based challenges. Keep practicing and refining your skills, and we’ll continue to explore more dynamic programming techniques tomorrow!
