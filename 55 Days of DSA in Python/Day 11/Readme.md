@@ -1,7 +1,3 @@
-Here's a detailed **README** for **Day 11** following the same structure as Day 10. It covers **01 Knapsack** and **Unbounded Knapsack**, including all four approaches for the Knapsack problem.
-
----
-
 # **Day 11: Dynamic Programming - 01 Knapsack and Unbounded Knapsack**
 
 Welcome to Day 11 of **55 Days of DSA in Python**! Today, we focus on two classic problems in Dynamic Programming: the **01 Knapsack Problem** and the **Unbounded Knapsack Problem**. These problems introduce us to optimization techniques that allow us to make decisions about including or excluding items to maximize value, while respecting the given weight constraints.
