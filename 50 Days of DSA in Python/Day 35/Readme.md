@@ -1,7 +1,3 @@
-Here’s the README for Day 35:
-
----
-
 # **Day 35: Singly Linked Lists**
 
 Welcome to Day 35 of **50 Days of DSA in Python**! Today, we dive into more advanced **Singly Linked List (SLL)** operations. We will cover two important tasks: **finding duplicates** in a linked list and **adding two numbers represented by linked lists**. These are common problems in linked list manipulations, and mastering them will help you solve many algorithmic challenges.
@@ -112,7 +108,3 @@ Today, we explored two important problems related to **Singly Linked Lists (SLL)
 2. **Add 2 Numbers**: We simulated the addition of two numbers represented by linked lists, handling carry-overs and constructing the resulting linked list in the process.
 
 By mastering these tasks, you can efficiently manipulate linked lists to solve a wide range of problems. Continue practicing, and stay tuned for more DSA concepts in the next days!
-
----
-
-Let me know if you need any adjustments or further explanations!
