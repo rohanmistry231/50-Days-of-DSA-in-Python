@@ -1,4 +1,4 @@
-## Day 17: Word Break & Matrix Chain Multiplication
+# Day 17: Word Break & Matrix Chain Multiplication
 
 Welcome to Day 17 of **55 Days of DSA in Python**! Today, we explore two important problems in dynamic programming: **Word Break** and **Matrix Chain Multiplication**. These problems are crucial for understanding **string segmentation** and **optimal matrix multiplication**, both of which have wide applications in **text processing, compilation, and optimization problems**.
 
