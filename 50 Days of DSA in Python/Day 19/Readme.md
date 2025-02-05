@@ -4,6 +4,13 @@ Welcome to Day 19 of **50 Days of DSA in Python**! Today, we explore **Greedy Al
 
 ---
 
+### **Topics Covered:**
+- Greedy Algorithms  
+- Fractional Knapsack  
+- Non-overlapping Intervals
+
+---
+
 ## **Introduction to Greedy Algorithms**
 
 ### **What are Greedy Algorithms?**
