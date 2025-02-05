@@ -1,6 +1,6 @@
 # 50 Days of DSA in Python 🚀
 
-Welcome to the **55 Days of Data Structures and Algorithms (DSA) in Python** repository! 🎉  
+Welcome to the **50 Days of Data Structures and Algorithms (DSA) in Python** repository! 🎉  
 This repository documents my journey of mastering DSA concepts, solving problems, and implementing them using Python over the next 55 days.
 
 ---
